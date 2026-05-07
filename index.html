@@ -1235,6 +1235,12 @@
           <div class="inline-checkout-sub" id="inlineSub">14-day money back · Free worldwide shipping</div>
         </div>
 
+        <!-- STEP 02: Add accessories -->
+        <div class="step-header" style="margin-top: 28px;">
+          <div class="step-eyebrow">STEP 02</div>
+          <h2 class="step-title">Add <span class="accent">accessories</span></h2>
+        </div>
+
         <!-- Expandable bundle menu (closed by default) -->
         <div class="expandable" id="bundleExpand">
           <div class="expand-header" onclick="toggleExpand()">
@@ -1302,7 +1308,7 @@
         </div>
 
         <div class="included" id="includedBox">
-          <h4>What's inside <span class="inside-count" id="insideCount"></span></h4>
+          <h4>What's inside</h4>
           <ul id="includedList"></ul>
         </div>
       </section>
@@ -1437,7 +1443,7 @@
     const sets = podCount / 2;
     switch (key) {
       case 'podbases': return [sets + '× PodBase Duo (' + podCount + ' bases)'];
-      case 'straps':   return [sets + '× Pole/Body Straps Kit (' + podCount + ' straps)'];
+      case 'straps':   return [sets + '× Functional Adapters Kit (' + podCount + ' Adapters)'];
       case 'ultimate': return [
         sets + '× PodBase Duo (' + podCount + ' bases)',
         sets + '× Functional Adapter Kit (' + podCount + ' of each)'
@@ -1578,7 +1584,6 @@
     const items = [...podIncluded[state.pods], ...getBundleAdds(bundleKey, state.pods), 'Plus hundreds of FREE drills in the BlazePod app'];
     document.getElementById('includedBox').style.display = 'block';
     document.getElementById('includedList').innerHTML = items.map(i => '<li>' + i + '</li>').join('');
-    document.getElementById('insideCount').textContent = items.length + ' items';
   }
 
   function progress() {
